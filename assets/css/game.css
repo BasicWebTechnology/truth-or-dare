@@ -1,0 +1,214 @@
+.game_selection {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.game_selection header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--border-color);
+  z-index: 2;
+}
+
+body.truth .game_selection header {
+  background-color: transparent;
+}
+
+body.dare .game_selection header {
+  background-color: transparent;
+}
+
+.game_selection header a {
+  color: var(--white);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.game_selection header a i {
+  font-size: 2rem;
+}
+
+.game_selection header .new_game {
+  color: var(--white);
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.game_selection header .settings {
+  position: relative;
+}
+
+.game_selection header .settings i {
+  color: var(--white);
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.game_selection header .settings .settings_container {
+  position: absolute;
+  right: 1rem;
+  top: 100%;
+  background-color: var(--white);
+  padding: 0.5rem 0;
+  border-radius: 3px;
+}
+
+header .settings .settings_container p {
+  color: var(--black);
+  font-size: 1.7rem;
+  width: 100%;
+}
+.game_selection header .settings .settings_container {
+  position: absolute;
+  top: 100%;
+  right: 1rem;
+  padding: 0.5rem 0;
+  border-radius: 3px;
+  background-color: var(--white);
+  display: block;
+  flex-direction: column;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: top right;
+  transition: transform 0.3s;
+}
+
+.game_selection header .settings:hover .settings_container {
+  transform: scale(1);
+  opacity: 1;
+}
+
+header .settings .settings_container p {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--black);
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  transition: none;
+  cursor: pointer;
+}
+
+header .settings .settings_container p:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.questions_container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.questions_container .buttons {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 20rem;
+  opacity: 1;
+}
+
+.questions_container .buttons.active {
+  transform: scale(0.3) translateY(10%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.questions_container .buttons button {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  text-transform: capitalize;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--white);
+  background: linear-gradient(
+    to bottom,
+    var(--border-color) 0%,
+    var(--button) 100%
+  );
+  border-radius: 5px;
+  box-shadow: 0 0.7rem 0 0 var(--border-color);
+  transition: none;
+}
+
+.questions_container .buttons button:active {
+  box-shadow: none;
+  transform: translateY(7px);
+}
+
+.questions_container .buttons span {
+  width: 100%;
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.questions_container .questions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 4rem;
+  width: 50rem;
+  padding: 0 1rem;
+  transform: scale(0.3);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.questions_container .questions.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: scale(1);
+}
+
+.questions_container .questions p {
+  color: var(--white);
+  font-size: 2rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.questions_container .questions .button {
+  width: 20rem;
+}
+
+.questions_container .questions .button button {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  text-transform: capitalize;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--white);
+  background: linear-gradient(
+    to bottom,
+    var(--border-color) 0%,
+    var(--button) 100%
+  );
+  box-shadow: 0 0.7rem 0 0 var(--border-color);
+  border-radius: 5px;
+  transition: none;
+}
+
+.questions_container .questions .button button:active {
+  box-shadow: none;
+  transform: translateY(7px);
+}
